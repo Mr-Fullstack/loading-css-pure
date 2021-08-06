@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loader</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .loader{
+            width: 70px;
+            height: 70px;
+        }
+        .loader .loader-spinner{
+            width: 90%;
+            height: 90%;
+            background:#f9f9f9;
+            position: relative;
+            top:5%;
+            left: 5%;
+            border-radius: 200px;
+            position: relative;
+            overflow: hidden;
+            -webkit-animation: rotate 1.5s infinite ease;
+            animation: rotate 1.5s infinite ease;
+
+        }
+        .loader .loader-spinner::before,
+        .loader .loader-spinner::after{
+            content: "";
+            position: absolute;
+            border-radius: 100px;
+        }
+        .loader .loader-spinner::before{
+            width:20%;
+            height: 50%;
+            background: tomato;
+            top:20%;
+            left: 0%;
+            -webkit-animation: rotateSpinner 1.49s infinite ease;
+            animation: rotateSpinner 1.49s infinite ease;
+        }
+        .loader .loader-spinner::after{
+            width:90%;
+            height: 90%;
+            background-color: #eee;
+            top: 5%;
+            left: 5%;
+        }
+        
+        @keyframes rotateSpinner {
+            
+            0%   { height: 20%; }   
+            50%  { height: 60%; }
+            100% { height: 20%; }
+        }
+
+
+        @keyframes rotate {
+            
+            0%{
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }   
+
+            100%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(450deg);
+            }
+        }
+
+
+
+    </style>
+
+        <div class="loader">
+            <div class="loader-spinner"></div> 
+        </div> 
+</body>
+</html>
